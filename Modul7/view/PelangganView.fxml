@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:controller="controller.PelangganController" prefHeight="400.0" prefWidth="730.0" 
+            xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21">
+    
+    <VBox layoutX="20.0" layoutY="20.0" spacing="10.0">
+        <HBox spacing="10.0"> <Label text="Nama" prefWidth="80.0" /> <TextField fx:id="namaField" prefWidth="250.0" /> </HBox>
+        <HBox spacing="10.0"> <Label text="Email" prefWidth="80.0" /> <TextField fx:id="emailField" prefWidth="250.0" /> </HBox>
+        <HBox spacing="10.0"> <Label text="Telepon" prefWidth="80.0" /> <TextField fx:id="teleponField" prefWidth="250.0" /> </HBox>
+    </VBox>
+    
+    <HBox layoutX="20.0" layoutY="140.0" spacing="15.0">
+        <Button text="Add" onAction="#handleAdd" />
+        <Button text="Edit" onAction="#handleEdit" />
+        <Button text="Delete" onAction="#handleDelete" />
+    </HBox>
+    
+    <TableView fx:id="pelangganTable" layoutX="10.0" layoutY="180.0" prefHeight="260.0" prefWidth="710.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+        <columns>
+            <TableColumn fx:id="idColumn" prefWidth="50.0" text="ID" /> 
+            <TableColumn fx:id="namaColumn" prefWidth="200.0" text="Nama" />
+            <TableColumn fx:id="emailColumn" prefWidth="280.0" text="Email" />
+            <TableColumn fx:id="teleponColumn" prefWidth="150.0" text="Telepon" />
+        </columns>
+    </TableView>
+</AnchorPane>

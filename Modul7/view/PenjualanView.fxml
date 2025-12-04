@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:controller="controller.PenjualanController" prefHeight="400.0" prefWidth="730.0" 
+            xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21">
+    
+    <VBox layoutX="20.0" layoutY="20.0" spacing="10.0">
+        <HBox spacing="10.0"> <Label text="Pelanggan" prefWidth="80.0" /> <ComboBox fx:id="pelangganComboBox" prefWidth="250.0" promptText="Pilih Pelanggan" /> </HBox>
+        <HBox spacing="10.0"> <Label text="Buku" prefWidth="80.0" /> <ComboBox fx:id="bukuComboBox" prefWidth="250.0" promptText="Pilih Buku" /> </HBox>
+        <HBox spacing="10.0"> <Label text="Jumlah" prefWidth="80.0" /> <TextField fx:id="jumlahField" prefWidth="100.0" /> </HBox>
+        <HBox spacing="10.0"> <Label text="Tanggal" prefWidth="80.0" /> <DatePicker fx:id="tanggalPicker" prefWidth="150.0" /> </HBox>
+        <HBox spacing="10.0" alignment="CENTER_LEFT">
+            <Label text="Total Harga:" prefWidth="80.0" style="-fx-font-weight: bold;" />
+            <Label fx:id="totalHargaLabel" text="Rp 0" style="-fx-font-weight: bold; -fx-font-size: 14;" />
+        </HBox>
+    </VBox>
+
+    <HBox layoutX="20.0" layoutY="210.0" spacing="15.0">
+        <Button text="Add Transaksi" onAction="#handleAdd" />
+        <Button text="Delete Transaksi" onAction="#handleDelete" />
+    </HBox>
+    
+    <TableView fx:id="penjualanTable" layoutX="10.0" layoutY="250.0" prefHeight="190.0" prefWidth="710.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+        <columns>
+            <TableColumn fx:id="idColumn" prefWidth="50.0" text="ID" />
+            <TableColumn fx:id="colNamaPelanggan" prefWidth="150.0" text="Nama Pelanggan" />
+            <TableColumn fx:id="colJudulBuku" prefWidth="200.0" text="Judul Buku" />
+            <TableColumn fx:id="jumlahColumn" prefWidth="80.0" text="Qty" />
+            <TableColumn fx:id="hargaColumn" prefWidth="120.0" text="Total Harga" />
+            <TableColumn fx:id="tanggalColumn" prefWidth="100.0" text="Tanggal" />
+        </columns>
+    </TableView>
+</AnchorPane>

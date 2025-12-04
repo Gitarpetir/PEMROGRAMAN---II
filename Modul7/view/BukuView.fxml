@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:controller="controller.BukuController" prefHeight="400.0" prefWidth="730.0" 
+            xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21">
+    
+    <VBox layoutX="20.0" layoutY="20.0" spacing="10.0">
+        <HBox spacing="10.0"> <Label text="Judul" prefWidth="80.0" /> <TextField fx:id="judulField" prefWidth="350.0" /> </HBox>
+        <HBox spacing="10.0"> <Label text="Penulis" prefWidth="80.0" /> <TextField fx:id="penulisField" prefWidth="350.0" /> </HBox>
+        <HBox spacing="10.0"> <Label text="Harga" prefWidth="80.0" /> <TextField fx:id="hargaField" prefWidth="150.0" promptText="misal: 75000.0" /> </HBox>
+        <HBox spacing="10.0"> <Label text="Stok" prefWidth="80.0" /> <TextField fx:id="stokField" prefWidth="100.0" promptText="angka bulat" /> </HBox>
+    </VBox>
+
+    <HBox layoutX="20.0" layoutY="180.0" spacing="15.0">
+        <Button text="Add" onAction="#handleAdd" />
+        <Button text="Edit" onAction="#handleEdit" />
+        <Button text="Delete" onAction="#handleDelete" />
+    </HBox>
+
+    <TableView fx:id="bukuTable" layoutX="10.0" layoutY="220.0" prefHeight="220.0" prefWidth="710.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+        <columns>
+            <TableColumn fx:id="idColumn" prefWidth="50.0" text="ID" />
+            <TableColumn fx:id="judulColumn" prefWidth="250.0" text="Judul" />
+            <TableColumn fx:id="penulisColumn" prefWidth="150.0" text="Penulis" />
+            <TableColumn fx:id="hargaColumn" prefWidth="150.0" text="Harga (Rp)" />
+            <TableColumn fx:id="stokColumn" prefWidth="100.0" text="Stok" />
+        </columns>
+    </TableView>
+</AnchorPane>

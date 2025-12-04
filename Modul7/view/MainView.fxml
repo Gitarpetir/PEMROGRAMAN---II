@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="500.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
+    <TabPane prefHeight="500.0" prefWidth="750.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <tabs>
+            <Tab text="Data Pelanggan">
+                <content> <fx:include source="PelangganView.fxml" /> </content>
+            </Tab>
+            <Tab text="Data Buku">
+                <content> <fx:include source="BukuView.fxml" /> </content>
+            </Tab>
+            <Tab text="Data Penjualan">
+                <content> <fx:include source="PenjualanView.fxml" /> </content>
+            </Tab>
+        </tabs>
+    </TabPane>
+</AnchorPane>
