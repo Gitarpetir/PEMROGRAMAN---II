@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="400" prefWidth="800" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.TransaksiController">
+
+    <children>
+        <VBox spacing="10" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+            <children>
+
+                <Label style="-fx-font-size: 20px; -fx-font-weight: bold;" text="DATA TRANSAKSI" />
+
+                <TableView fx:id="tableTransaksi" prefHeight="220">
+                    <columns>
+                        <TableColumn fx:id="columnTransaksiId" prefWidth="60" text="ID" />
+                        <TableColumn fx:id="columnTransaksiPelangganId" prefWidth="100" text="Pelanggan ID" />
+                        <TableColumn fx:id="columnTransaksiBarangId" prefWidth="100" text="Barang ID" />
+                        <TableColumn fx:id="columnTransaksiJumlahBarang" prefWidth="80" text="Jumlah" />
+                        <TableColumn fx:id="columnTransaksiTotalHarga" prefWidth="120" text="Total Harga" />
+                        <TableColumn fx:id="columnTransaksiTanggal" prefWidth="120" text="Tanggal" />
+                    </columns>
+                </TableView>
+
+                <GridPane hgap="10" vgap="10">
+                    <columnConstraints>
+                        <ColumnConstraints percentWidth="20" />
+                        <ColumnConstraints percentWidth="80" />
+                    </columnConstraints>
+                    <children>
+                        <Label text="Pelanggan ID" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                        <TextField fx:id="fieldTransaksiPelangganId" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+                        <Label text="Barang ID" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                        <TextField fx:id="fieldTransaksiBarangId" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+                        <Label text="Jumlah Barang" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                        <TextField fx:id="fieldTransaksiJumlahBarang" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                    </children>
+               <rowConstraints>
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+               </rowConstraints>
+                </GridPane>
+
+                <HBox spacing="10">
+                    <children>
+                        <Button fx:id="buttonTambahTransaksi" onAction="#onTambahTransaksi" text="Tambah" />
+                        <Button fx:id="buttonUpdateTransaksi" onAction="#onUpdateTransaksi" text="Update" />
+                        <Button fx:id="buttonDeleteTransaksi" onAction="#onDeleteTransaksi" text="Hapus" />
+                        <Button fx:id="buttonRefreshTransaksi" onAction="#onRefreshTransaksi" text="Refresh" />
+                    </children>
+                </HBox>
+
+            </children>
+            <padding>
+                <Insets bottom="5" left="5" right="5" top="5" />
+            </padding>
+        </VBox>
+      <Button fx:id="buttonKembaliTransaksi" layoutX="726.0" layoutY="15.0" mnemonicParsing="false" onAction="#onKembaliTransaksi" text="Kembali" />
+    </children>
+</AnchorPane>
