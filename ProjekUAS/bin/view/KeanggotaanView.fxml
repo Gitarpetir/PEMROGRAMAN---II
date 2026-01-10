@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="700" prefWidth="1000" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.KeanggotaanController">
+
+    <top>
+        <GridPane hgap="10" vgap="10">
+            <padding>
+                <Insets bottom="10" left="10" right="10" top="10" />
+            </padding>
+
+            <Label text="Member" />
+            <ComboBox fx:id="cbMember" prefWidth="200" GridPane.columnIndex="1" />
+
+            <Label text="Durasi (bulan)" GridPane.rowIndex="1" />
+            <TextField fx:id="txtDurasi" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+            <HBox spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                <Button onAction="#handleTambah" text="Tambah / Perpanjang" />
+            </HBox>
+         <columnConstraints>
+            <ColumnConstraints />
+            <ColumnConstraints />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+         </rowConstraints>
+        </GridPane>
+    </top>
+
+    <center>
+        <TableView fx:id="tableKeanggotaan" prefHeight="300">
+            <columns>
+                <TableColumn fx:id="colNama" prefWidth="250" text="Nama Member" />
+                <TableColumn fx:id="colDurasi" prefWidth="120" text="Durasi" />
+                <TableColumn fx:id="colTotal" prefWidth="150" text="Total Bayar" />
+                <TableColumn fx:id="colBerakhir" prefWidth="180" text="Berlaku Sampai" />
+            </columns>
+        </TableView>
+    </center>
+
+    <bottom>
+        <VBox alignment="CENTER" spacing="10">
+            <padding>
+                <Insets bottom="10" top="10" />
+            </padding>
+
+            <Label text="Preview Kartu Digital" />
+
+            <ImageView fx:id="imgPreview" fitHeight="300" fitWidth="500" preserveRatio="true" style="-fx-border-color: gray;" />
+
+            <HBox spacing="10">
+                <Button onAction="#handlePreview" text="Generate Preview" />
+                <Button onAction="#handleSimpan" text="Simpan Kartu" />
+				<Button onAction="#handleKembali" text="Kembali" />
+            </HBox>
+        </VBox>
+    </bottom>
+
+</BorderPane>

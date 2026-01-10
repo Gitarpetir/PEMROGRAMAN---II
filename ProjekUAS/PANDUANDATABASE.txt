@@ -1,0 +1,72 @@
+SIMAGYM
+Sistem Informasi Manajemen Gym
+
+Instal
+1. Sistem Operasi Windows
+2. JavaFX
+3. XAMPP 
+4. SQLyog (atau DBMS client lain)
+5. File database: simagym.sql
+
+A. PANDUAN SETUP DATABASE
+
+1. Jalankan XAMPP dan nyalakan service MySQL
+   Pastikan service sudah berjalan.
+
+2. Buka SQLyog
+   - Host     : localhost
+   - Username : root
+   - Password : (kosong / sesuai konfigurasi lokal)
+
+3. Import Database
+   a. Buka menu: Tools → Execute SQL Script
+   b. Pilih file: database/simagym.sql
+   c. Klik Execute
+
+4. Pastikan database berhasil dibuat
+   Database bernama: simagym
+   Tabel:
+   - admin
+   - member
+   - keanggotaan
+
+B. KONFIGURASI KONEKSI DATABASE DI APLIKASI
+
+Aplikasi menggunakan JDBC untuk koneksi database.
+Konfigurasi berada pada file:
+
+util/DatabaseUtil.java
+
+Contoh konfigurasi:
+
+jdbc:mysql://localhost:3306/simagym
+Username : root
+Password : (kosong)
+
+Jika konfigurasi MySQL berbeda, silakan sesuaikan
+username dan password pada class DatabaseUtil.
+
+C. CARA MENJALANKAN APLIKASI
+
+1. Pastikan database sudah diimport
+2. Jalankan file SIMAGYM.exe
+3. Login menggunakan akun admin
+
+----------------------------------------
+D. AKUN LOGIN ADMIN
+
+Admin Shift Pagi
+Username : admin_pagi
+Password : 12345
+
+Admin Shift Sore
+Username : admin_sore
+Password : 12345
+
+----------------------------------------
+E. CATATAN
+- File simagym.sql disertakan untuk keperluan instalasi database
+- Aplikasi tidak akan berjalan jika database belum diimport
+- Pastikan MySQL service aktif sebelum menjalankan aplikasi
+
+----------------------------------------

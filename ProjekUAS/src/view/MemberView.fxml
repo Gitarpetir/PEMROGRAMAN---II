@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<BorderPane prefHeight="600" prefWidth="900" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MemberController">
+
+    <top>
+        <GridPane hgap="10" vgap="10">
+            <padding>
+                <Insets bottom="10" left="15" right="15" top="15" />
+            </padding>
+
+            <Label text="Nama" />
+            <TextField fx:id="txtNama" GridPane.columnIndex="1" />
+
+            <Label text="Alamat" GridPane.rowIndex="1" />
+            <TextField fx:id="txtAlamat" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+            <Label text="No Telepon" GridPane.rowIndex="2" />
+            <TextField fx:id="txtTelepon" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+            <HBox spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                <Button onAction="#handleTambah" text="Tambah" />
+                <Button onAction="#handleUpdate" text="Update" />
+                <Button onAction="#handleHapus" text="Hapus" />
+                <Button onAction="#handleKembali" text="Kembali" />
+            </HBox>
+         <columnConstraints>
+            <ColumnConstraints />
+            <ColumnConstraints />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+         </rowConstraints>
+        </GridPane>
+    </top>
+
+    <center>
+        <TableView fx:id="tableMember">
+            <columns>
+                <TableColumn fx:id="colId" prefWidth="80" text="ID" />
+                <TableColumn fx:id="colNama" prefWidth="200" text="Nama" />
+                <TableColumn fx:id="colAlamat" prefWidth="300" text="Alamat" />
+                <TableColumn fx:id="colTelepon" prefWidth="200" text="No Telepon" />
+            </columns>
+        </TableView>
+    </center>
+
+</BorderPane>
